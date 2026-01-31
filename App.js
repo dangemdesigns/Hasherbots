@@ -1,15 +1,16 @@
 
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import Phaser from 'phaser';
-import { MainScene } from './game/MainScene';
-import HUD from './components/HUD';
-import ShopModal, { COSMETIC_CATALOG } from './components/ShopModal';
-import Leaderboard from './components/Leaderboard';
-import { roninLogin, guestLogin } from './services/roninService';
-import { initializeGrid, getTiles, mineResource, placeStructure, triggerGenesisShift, spawnEventNode } from './services/gameService';
-import { audio } from './services/audioService';
+import { MainScene } from './game/MainScene.js';
+import HUD from './components/HUD.js';
+import ShopModal, { COSMETIC_CATALOG } from './components/ShopModal.js';
+import Leaderboard from './components/Leaderboard.js';
+import { roninLogin, guestLogin } from './services/roninService.js';
+import { initializeGrid, getTiles, mineResource, placeStructure, triggerGenesisShift, spawnEventNode } from './services/gameService.js';
+import { audio } from './services/audioService.js';
+// Note: I removed the "import types" line because it breaks in the browser
 
-const MOCK_LEADERBOARD: LeaderboardEntry[] = [
+const MOCK_LEADERBOARD = [
   { rank: 1, name: 'CyberSamurai', score: 145000, isUser: false },
   { rank: 2, name: 'GlitchWitch', score: 128000, isUser: false },
   { rank: 3, name: 'NullPointer', score: 112500, isUser: false },
@@ -29,10 +30,10 @@ const App = () => {
   const [isBuildMode, setIsBuildMode] = useState(false);
   const [showShop, setShowShop] = useState(false);
   const [showLeaderboard, setShowLeaderboard] = useState(false);
-  const [activeEventName, setActiveEventName] = useState<string | null>(null);
+  const [activeEventName, setActiveEventName] = useState(null);
   
-  const [feed, setFeed] = useState<FeedItem[]>([]);
-  const [profile, setProfile] = useState<PlayerProfile>({
+  const [feed, setFeed] = useState([]);
+  const [profile, setProfile] = useState({
     address: '', 
     gold: 5000, 
     xp: 0, 
@@ -45,6 +46,7 @@ const App = () => {
         impact: 'impact_standard'
     }
   });
+
 
   const isBuildModeRef = useRef(isBuildMode);
   const userRef = useRef(user);
