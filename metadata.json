@@ -1,0 +1,5 @@
+{
+  "name": "Ronin Realms - Mining Loop Boilerplate",
+  "description": "A modular 2D grid-based extraction game boilerplate featuring Phaser.js for gameplay, Tailwind CSS for UI, and a mocked Ronin/Cloudflare/Supabase stack.",
+  "requestFramePermissions": []
+}
