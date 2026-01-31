@@ -8,7 +8,6 @@ import Leaderboard from './components/Leaderboard';
 import { roninLogin, guestLogin } from './services/roninService';
 import { initializeGrid, getTiles, mineResource, placeStructure, triggerGenesisShift, spawnEventNode } from './services/gameService';
 import { audio } from './services/audioService';
-import { User, PlayerProfile, GameTile, CosmeticItem, LeaderboardEntry, FeedItem } from './types';
 
 const MOCK_LEADERBOARD: LeaderboardEntry[] = [
   { rank: 1, name: 'CyberSamurai', score: 145000, isUser: false },
