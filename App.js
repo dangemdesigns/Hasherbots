@@ -18,12 +18,12 @@ const MOCK_LEADERBOARD: LeaderboardEntry[] = [
   { rank: 5, name: 'Guest_992', score: 85000, isUser: false },
 ];
 
-const App: React.FC = () => {
-  const gameRef = useRef<Phaser.Game | null>(null);
-  const sceneRef = useRef<MainScene | null>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
+const App = () => {
+  const gameRef = useRef(null);
+  const sceneRef = useRef(null);
+  const containerRef = useRef(null);
   
-  const [user, setUser] = useState<User>({ address: '', isLoggedIn: false });
+  const [user, setUser] = useState({ address: '', isLoggedIn: false });
   const [hasStarted, setHasStarted] = useState(false);
   const [showAuthPrompt, setShowAuthPrompt] = useState(false);
 
